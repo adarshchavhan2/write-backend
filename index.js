@@ -24,7 +24,7 @@ app.use(express.json({
 app.use(
     express.urlencoded({
         extended: true
-    })
+    })q
     );
     app.use(cookieParser());
     app.use(cors({
