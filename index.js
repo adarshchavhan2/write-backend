@@ -28,7 +28,7 @@ app.use(
     );
     app.use(cookieParser());
     app.use(cors({
-        origin: proccess.env.FRONTEND_URL,
+        origin: "https://stirring-daffodil-2fba16.netlify.app",
         credentials: true,
         methods: ["GET","POST","PUT", "DELETE"]
     }));
