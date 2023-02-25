@@ -13,7 +13,7 @@ connectDb();
 
 const app = express();
 const port = process.env.PORT || 4000;
-const frontendUrl = process.env.FRONTEND.URL;
+const frontendUrl = process.env.FRONTEND_URL;
 
 app.get('/', (req, res)=> {
     res.send(`<h1>Site is wroking. click to visit frontend.</h1>`);
