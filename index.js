@@ -3,7 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser')
 const { connectDb } = require('./config/db');
-// const { error } = require('./middlewares/error');
+const { error } = require('./middlewares/error');
 // const userRoutes = require('./routes/userRoutes');
 // const postRoutes = require('./routes/postRoutes');
 
@@ -38,5 +38,5 @@ app.use(
 // app.use('/api/v1', userRoutes);
 // app.use('/api/v1', postRoutes);
 
-// app.use(error)
+app.use(error)
 app.listen(port);
