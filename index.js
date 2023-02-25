@@ -13,6 +13,7 @@ connectDb();
 
 const app = express();
 const port = process.env.PORT || 4000;
+const frontendUrl = process.env.FRONTEND.URL;
 
 app.get('/', (req, res)=> {
     res.send(`<h1>Site is wroking. click to visit frontend.</h1>`);
@@ -28,7 +29,7 @@ app.use(
     );
     app.use(cookieParser());
     app.use(cors({
-        origin: "https://stirring-daffodil-2fba16.netlify.app",
+        origin: frontendUrl,
         credentials: true,
         methods: ["GET","POST","PUT", "DELETE"]
     }));
