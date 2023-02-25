@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 const { connectDb } = require('./config/db');
 const { error } = require('./middlewares/error');
 // const userRoutes = require('./routes/userRoutes');
-// const postRoutes = require('./routes/postRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 dotenv.config();
 
@@ -36,7 +36,7 @@ app.use(
     
     // available routes
 // app.use('/api/v1', userRoutes);
-// app.use('/api/v1', postRoutes);
+app.use('/api/v1', postRoutes);
 
 app.use(error)
 app.listen(port);
