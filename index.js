@@ -21,6 +21,9 @@ app.use(cors({
     credentials: true, origin: FRONTEND_URL, methods:['GET', 'POST', 'PUT', 'DELETE']
 }));
     
+app.get('/', (req,res)=>{
+    res.send(frontend: FRONTEND_URL);
+});
     
     // available routes
 app.use('/api/v1', userRoutes);
