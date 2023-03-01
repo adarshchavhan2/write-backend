@@ -13,25 +13,13 @@ connectDb();
 
 const app = express();
 const port = process.env.PORT || 4000;
-const frontendUrl = 'https://write-blogs.netlify.app/';
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
-app.get('/', (req, res)=> {
-    res.send(`<h1>Site is wroking. click to visit frontend.</h1>`);
-})
-
-app.use(express.json({
-    limit: '50MB'
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors({
+    credentials: true, origin: FRONTEND_URL, methods:['GET', 'POST', 'PUT', 'DELETE']
 }));
-app.use(
-    express.urlencoded({
-        extended: true
-    })
-    );
-    app.use(cookieParser());
-    app.use(cors({
-        credentials: true,
-        methods: ["GET","POST","PUT", "DELETE"]
-    }));
     
     
     // available routes
