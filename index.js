@@ -22,7 +22,7 @@ app.use(cors({
 }));
     
 app.get('/', (req,res)=>{
-    res.send(frontend: FRONTEND_URL);
+    res.send('frontend: '+FRONTEND_URL);
 });
     
     // available routes
